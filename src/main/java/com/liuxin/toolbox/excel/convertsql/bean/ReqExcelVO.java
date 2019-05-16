@@ -10,13 +10,11 @@ public class ReqExcelVO  implements Serializable{
    */
   private static final long serialVersionUID = -1840425196962469640L;
 
-  private String filePath;  //文件路径
+  private String filePath;    //文件路径
   
-  private List<Integer> cols; //需要读取的列
+  private List<Integer> cols; //需要读取excel的列
   
-  private List<String> values;  //输出语句,每个index表示一个断句
-  
-  private String value;         //输出语句,用{}占位符号隔开
+  private String sqlTemplate; //输出语句,需要替换的值用{}占位符号隔开
 
   public String getFilePath() {
     return filePath;
@@ -34,19 +32,12 @@ public class ReqExcelVO  implements Serializable{
     this.cols = cols;
   }
 
-  public List<String> getValues() {
-    return values;
+  public String getSqlTemplate() {
+    return sqlTemplate;
   }
 
-  public void setValues(List<String> values) {
-    this.values = values;
+  public void setSqlTemplate(String sqlTemplate) {
+    this.sqlTemplate = sqlTemplate;
   }
 
-  public String getValue() {
-    return value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
 }
