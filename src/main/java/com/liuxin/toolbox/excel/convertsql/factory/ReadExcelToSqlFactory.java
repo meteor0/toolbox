@@ -1,19 +1,19 @@
 package com.liuxin.toolbox.excel.convertsql.factory;
 
-import com.liuxin.toolbox.excel.convertsql.factory.impl.DemoExcel;
-import com.liuxin.toolbox.excel.convertsql.factory.impl.ReadExcelToSql;
+import com.liuxin.toolbox.excel.convertsql.service.DemoExcelServiceImpl;
+import com.liuxin.toolbox.excel.convertsql.service.ReadExcelToSqlService;
 
 public class ReadExcelToSqlFactory {
 
   public static final String TYPE_ONE = "demo1";// demo1
 
 
-  public ReadExcelToSql readExcel(String type) {
+  public ReadExcelToSqlService readExcel(String type) {
     switch (type) {
       case TYPE_ONE:
-        return new DemoExcel();
+        return new DemoExcelServiceImpl();
       default:
-        return new DemoExcel();
+        return new DemoExcelServiceImpl();
     }
   }
 }

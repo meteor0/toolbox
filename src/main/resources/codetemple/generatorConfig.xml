@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+   <!--  <classPathEntry location="C:\IDEAWorkSpace\scsj_v3\web\WEB-INF\lib\ojdbc6.jar" /> -->
+    <classPathEntry location="E:\jar\myJar\ojdbc6-1.0.jar" />
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
+                        userId="leopard"
+                        password="111">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- <javaModelGenerator targetPackage="com.smartwasser.scsj.model" targetProject="C:\IDEAWorkSpace\scsj_v3\src"> -->
+        <javaModelGenerator targetPackage="com.code.mybatis.code" targetProject="E:\workSpace\z_code\src">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- <sqlMapGenerator targetPackage="com.smartwasser.scsj.dao.mapper"  targetProject="C:\IDEAWorkSpace\scsj_v3\src"> -->
+        <sqlMapGenerator targetPackage="com.code.mybatis.code"  targetProject="E:\workSpace\z_code\src">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <!-- <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.smartwasser.scsj.dao"  targetProject="C:\IDEAWorkSpace\scsj_v3\src"> -->
+        <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.code.mybatis.code"  targetProject="E:\workSpace\z_code\src">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table tableName="P_MER_FIN">
+            <generatedKey column="id" sqlStatement="select sys_guid() from dual"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

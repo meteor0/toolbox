@@ -3,6 +3,7 @@ package com.liuxin.toolbox.excel.utils;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -79,12 +80,19 @@ public class ExcelRead {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         return format.format(date);
       }
-      return String.valueOf(row.getNumericCellValue());
-    } else {
+        return String.valueOf(new DecimalFormat("#.##").format(row.getNumericCellValue()));
+    } else if (row.getCellType() == CellType.FORMULA) {
+      return String.valueOf(row.getCellFormula());
+    } else if (row.getCellType() == CellType.ERROR) {
+      return String.valueOf(row.getErrorCellValue());
+    } else if (row.getCellType() == CellType.BLANK) {
+      return null;
+    }else {
       return String.valueOf(row.getStringCellValue());
     }
   }
 
+  
   /**
    * 判断Excel的版本,获取Workbook
    * 
