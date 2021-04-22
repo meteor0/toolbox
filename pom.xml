@@ -20,7 +20,7 @@
 		<poi.version>4.0.0</poi.version>
 		<commons-lang3.version>3.8.1</commons-lang3.version>
 		<!-- mybatis版本号 -->
-		<mybatis.version>3.2.7</mybatis.version>
+		<mybatis.version>3.5.6</mybatis.version>
 		<sitemesh.version>3.0.0</sitemesh.version>
 
 	</properties>
